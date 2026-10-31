@@ -16,7 +16,7 @@ import { Input } from './Input.js';
 import { EventBus } from './EventBus.js';
 import { ObjectPool } from './ObjectPool.js';
 import { Camera } from './Camera.js';
-import { pointInCircle, worldToGrid } from '../Collision.js';
+import { pointInCircle, worldToGrid } from './Collision.js';
 import { Projectile } from '../entities/Projectile.js';
 import { SunToken } from '../entities/SunToken.js';
 import { Particle } from '../entities/Particle.js';
@@ -71,7 +71,6 @@ export class Game {
         }
       ),
       particle: new ObjectPool(
-        () => new Particle(),
         (p, x, y, color, opts) => p.reset(x, y, color, opts)
       ),
       zombie: new ObjectPool(
