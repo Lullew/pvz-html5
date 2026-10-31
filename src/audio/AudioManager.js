@@ -33,7 +33,7 @@ export class AudioManager {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
     osc.type = type;
-    osc.freq.setValueAtTime(freq, t0);
+    osc.frequency.setValueAtTime(freq, t0);
     gain.gain.setValueAtTime(gainValue, t0);
     gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
     osc.connect(gain);
@@ -48,8 +48,8 @@ export class AudioManager {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
     osc.type = type;
-    osc.freq.setValueAtTime(f1, t0);
-    osc.freq.exponentialRampToValueAtTime(Math.max(20, f2), t0 + duration);
+    osc.frequency.setValueAtTime(f1, t0);
+    osc.frequency.exponentialRampToValueAtTime(Math.max(20, f2), t0 + duration);
     gain.gain.setValueAtTime(gainValue, t0);
     gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
     osc.connect(gain);
@@ -71,7 +71,7 @@ export class AudioManager {
     src.buffer = buffer;
     const filter = this.ctx.createBiquadFilter();
     filter.type = filterType;
-    filter.freq.value = filterFreq;
+    filter.frequency.value = filterFreq;
     const gain = this.ctx.createGain();
     gain.gain.setValueAtTime(gainValue, t0);
     gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
