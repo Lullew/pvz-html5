@@ -27,7 +27,7 @@ export function pointInCircle(px, py, cx, cy, r) {
 export function worldToGrid(px, py, grid) {
   const col = Math.floor((px - grid.originX) / grid.cell);
   const row = Math.floor((py - grid.originY) / grid.cell);
-  if (col < 0 || col >= grid.cols || row < 0 || row >= grid.cols) return null;
+  if (col < 0 || col >= grid.cols || row < 0 || row >= grid.rows) return null;
   return { row, col };
 }
 
